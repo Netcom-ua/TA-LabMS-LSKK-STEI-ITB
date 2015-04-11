@@ -1,0 +1,428 @@
+<?php 
+include'template/header.php';
+#baca variabel URL (if register global on)
+$tanggal = $_GET['tanggal'];
+$waktu = $_GET['waktu'];
+$kd_modul = $_GET['kd_modul'];
+
+echo $kd_modul;
+echo $tanggal;
+echo $waktu;
+echo $id_pengenal;
+echo $nim;
+?>
+<div class="main">
+  <div class="main-inner">
+    <div class="container">
+      <div class="row">
+        <div class="span5">
+		<div class="widget">
+            <div class="widget-header"> <i class="icon-home"></i>
+              <h3>Halaman Asisten Laboratorium</h3>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+              <div class="shortcuts">
+			  <a href="praktikum/course_categories.php" class="shortcut">
+			  <i class="shortcut-icon icon-list-alt"></i>
+			  <span class="shortcut-label">Praktikum</span></a>
+			  
+			  <a href="javascript:;" class="shortcut">
+			  <i class="shortcut-icon icon-group"></i><span class="shortcut-label">Tukar Jadwal Asisten</span> </a>
+			  
+			  <a href="javascript:;" class="shortcut">
+			  <i class="shortcut-icon icon-group"></i><span class="shortcut-label">Tukar Jadwal</span> </a>
+
+			  <a href="software/list_software.php" class="shortcut">
+			  <i class="shortcut-icon icon-facetime-video"></i><span class="shortcut-label">Video</span> </a>
+			  <a href="javascript:;" class="shortcut">
+			  <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Software</span> </a>
+			  <a href="javascript:;" class="shortcut">
+			  <i class="shortcut-icon icon-file"></i><span class="shortcut-label">Hasil Penilaian</span> </a>
+			  <a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-print "></i>
+			  <span class="shortcut-label">Generate Laporan</span> </a> 
+			  
+			  <!-- Menampilkan Jumlah data Mahasiswa  -->	
+				<?php
+					$sql="select * from tb_mahasiswa";
+					if ($result=mysqli_query($mysqli,$sql))
+					  {
+					  // Return the number of rows in result set
+					  $rowcount=mysqli_num_rows($result);
+					  // Free result set
+					  mysqli_free_result($result);
+				  }
+				?>
+			  <a href="mhs" class="shortcut"><i class="shortcut-icon icon-user"></i>
+			   <span class="shortcut-label">Mahasiswa</span>
+				<span class="badge badge-warning pull-center" style="line-height:18px;" title="Jumlah data">
+			   <?php printf("%d",$rowcount);?></span> </a>
+			   
+			   <a href="staf.php" class="shortcut"><i class="shortcut-icon icon-user"></i> <span class="shortcut-label">Teknisi Laboratorium</span> <span class="badge badge-warning pull-center" style="line-height:18px;" title="Jumlah data"><?php printf("%d",$rowcount);?></span>  </a>
+			   
+			   <!-- Menampilkan Jumlah data Asisten  -->	
+				<?php
+					$sql="select * from tb_staf where level='asisten'";
+					if ($result=mysqli_query($mysqli,$sql))
+					  {
+					  // Return the number of rows in result set
+					  $rowcount=mysqli_num_rows($result);
+					  // Free result set
+					  mysqli_free_result($result);
+				  }
+				?>
+				
+			   <a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-user"></i><span class="shortcut-label">Asisten Praktikum</span> <span class="badge badge-warning pull-center" style="line-height:18px;" title="Jumlah data"><?php printf("%d",$rowcount);?></span> </a>
+			   
+			    <!-- Menampilkan Jumlah data Kordas  -->	
+				<?php
+					$sql="select * from tb_user where level='kordas'";
+					if ($result=mysqli_query($mysqli,$sql))
+					  {
+					  // Return the number of rows in result set
+					  $rowcount=mysqli_num_rows($result);
+					  // Free result set
+					  mysqli_free_result($result);
+				  }
+				?>
+			   <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-user"></i>
+			   <span class="shortcut-label">Koordinator Asisten</span>
+			   <span class="badge badge-warning pull-center" style="line-height:18px;" title="Jumlah data"><?php printf("%d",$rowcount);?></span> </a>
+			   
+			   <!-- Menampilkan Jumlah data Kepala Laboratorium  -->	
+				<?php
+					$sql="select * from tb_user where level='kalab'";
+					if ($result=mysqli_query($mysqli,$sql))
+					  {
+					  // Return the number of rows in result set
+					  $rowcount=mysqli_num_rows($result);
+					  // Free result set
+					  mysqli_free_result($result);
+				  }
+				?>
+			   <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-user"></i>
+			   <span class="shortcut-label"> Kepala Laboratorium </span> <span class="badge badge-warning pull-center" style="line-height:18px;" title="Jumlah data"><?php printf("%d",$rowcount);?> </span> </a> </span> </a>
+			   
+			   <!-- Menampilkan Jumlah data Kepala Administrator  -->	
+				<?php
+					$sql="select * from tb_user where level='admin'";
+					if ($result=mysqli_query($mysqli,$sql))
+					  {
+					  // Return the number of rows in result set
+					  $rowcount=mysqli_num_rows($result);
+					  // Free result set
+					  mysqli_free_result($result);
+				  }
+				?>
+			   <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-user"></i>
+			   <span class="shortcut-label">Administrator</span> <span class="badge badge-warning pull-center" style="line-height:18px;" title="Jumlah data"><?php printf("%d",$rowcount);?> </span> </a> </span> </a>
+			   
+			   <a href="javascript:;" class="shortcut"><span class="badge badge-warning pull-center" style="line-height:18px;"></span> <span class="shortcut-label">Jumlah Data</span></a>
+			  </div>
+              <!-- /shortcuts --> 
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          
+          <!-- /widget -->
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-file"></i>
+              <h3> Content</h3>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+              <ul class="messages_layout">
+                <li class="from_user left"> <a href="#" class="avatar"><img src="img/message_avatar1.png"/></a>
+                  <div class="message_wrap"> <span class="arrow"></span>
+                    <div class="info"> <a class="name">John Smith</a> <span class="time">1 hour ago</span>
+                      <div class="options_arrow">
+                        <div class="dropdown pull-right"> <a class="dropdown-toggle " id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#"> <i class=" icon-caret-down"></i> </a>
+                          <ul class="dropdown-menu " role="menu" aria-labelledby="dLabel">
+                            <li><a href="#"><i class=" icon-share-alt icon-large"></i> Reply</a></li>
+                            <li><a href="#"><i class=" icon-trash icon-large"></i> Delete</a></li>
+                            <li><a href="#"><i class=" icon-share icon-large"></i> Share</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text"> As an interesting side note, as a head without a body, I envy the dead. There's one way and only one way to determine if an animal is intelligent. Dissect its brain! Man, I'm sore all over. I feel like I just went ten rounds with mighty Thor. </div>
+                  </div>
+                </li>
+               
+              </ul>
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget --> 
+        </div>
+        <!-- /span6 -->
+        <div class="span7">
+		<div class="widget widget-table action-table">
+			<div class="control-group">
+				<!--<label class="control-label"></label>-->
+				<div class="controls">
+				 <div class="accordion" id="accordion2">
+				  <div class="accordion-group">
+					<div class="accordion-heading">
+					  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+						<div class="widget-header"> <i class="icon-user"></i>
+							<!-- Menampilkan Jumlah data Mahasiswa  -->	
+							
+							<?php
+								$sql="select * from  tb_jadwal_praktikum where id_asisten='$id_pengenal'";
+								if ($result=mysqli_query($mysqli,$sql))
+								  {
+								  // Return the number of rows in result set
+								  $rowcount1=mysqli_num_rows($result);
+								  // Free result set
+								  mysqli_free_result($result);
+							  }
+							?>
+							  <h3> Praktikum : <?php echo $tanggal.' '.$waktu ?>&nbsp;<span class="badge badge-success pull-right" style="line-height:18px;" title="Belum dikonfirmasi"> <?php printf("%d",$rowcount1);?> </span></h3>
+							</div>
+						  </a>
+						</div>
+						<div id="collapseOne" class="accordion-body collapse in">
+						  <div class="accordion-inner">
+						 
+							<center><h3>Mata Kuliah : <?php echo $data5['nama_mk']; ?> | Kode Modul : <?php echo $data5['kd_modul'];?></h3></center>
+							<!-- /widget-header -->
+							<div class="widget-content">
+							  <table class="table table-striped table-bordered">
+								<thead>
+								  <tr>
+									<th> No </th>
+									<th> NIM</th>
+									<th> Mahasiswa</th>
+									<th> Upload Tugas</th>
+									<th> Tanggal Upload</th>
+									<th class="td-actions"> </th>
+								  </tr>
+								</thead>
+								<tbody>
+								 <?php 
+									$query ="SELECT tb_jadwal_praktikum.nim, tb_jadwal_praktikum.group, tb_jadwal_praktikum.ruangan,	tb_jadwal_praktikum.tanggal, tb_jadwal_praktikum.waktu, tb_matakuliah.nama_mk, tb_matakuliah.semester,	tb_matakuliah.akademik, tb_matakuliah.nip_dosen, tb_mdl_praktikum.kd_mk, tb_mdl_praktikum.kd_modul, tb_mdl_praktikum.nm_modul, tb_mdl_praktikum.singkatan, tb_mdl_praktikum.nama_kordas, tb_mahasiswa.nim, tb_mahasiswa.nama_mhs, tb_user.id_pengenal, tb_user.nama_user, tb_dosen.nama_dosen
+									FROM tb_jadwal_praktikum INNER JOIN tb_matakuliah ON tb_jadwal_praktikum.kd_mk = tb_matakuliah.kd_mk INNER JOIN tb_mdl_praktikum ON tb_jadwal_praktikum.kd_modul = tb_mdl_praktikum.kd_modul INNER JOIN tb_mahasiswa ON tb_jadwal_praktikum.nim = tb_mahasiswa.nim INNER JOIN tb_mdl_upload_laporan ON tb_mahasiswa.nim = tb_mdl_upload_laporan.nim INNER JOIN tb_user ON tb_jadwal_praktikum.id_asisten = tb_user.id_pengenal INNER JOIN tb_dosen ON tb_dosen.nid = tb_matakuliah.nip_dosen where tb_jadwal_praktikum.tanggal='$tanggal' and tb_jadwal_praktikum.waktu ='$waktu' and tb_user.id_pengenal='$id_pengenal'";
+									//var_dump($query);
+									$result = $mysqli->query($query)
+									or die('<b>-- Query failed -- </b> ' . mysql_error());
+									$no++;
+									while ($data5 = $result->fetch_array()){
+									$nim= $data5['nim'];
+								?>
+								<!-- Menampilkan data Mahasiswa yang belum dikonfirmasi -->
+								
+								  <tr>
+									<td> <?php echo $no; ?> </td>
+									<td> <?php echo $data5['nim']; ?> </td>
+									<td> <?php echo $data5['nama_mhs']; ?> </td>
+									
+									
+									<td class="td-actions"> <b class="btn btn-small btn-warning">Tugas belum diupload</td>
+									<td> <?php echo $datax['date']?></td>
+									
+									<td class="td-actions"><a href="#" class="btn btn-success"><i class="icon-only icon-book" title="Nilai Mahasiswa"> </i></a></td>
+								  </tr>
+								  <?php
+									}
+									?>
+									
+								</tbody>
+							  </table>
+							   <table class="table table-striped table-bordered">
+								<thead>
+								  <tr>
+									<th> No </th>
+									<th> NIM</th>
+									<th> Mahasiswa</th>
+									<th> Upload Tugas</th>
+									<th> Tanggal Upload</th>
+									<th class="td-actions"> </th>
+								  </tr>
+								</thead>
+								<tbody>
+								<tr>
+								
+							  <?php
+									$queryx="SELECT * 
+										FROM tb_mdl_upload_laporan
+										WHERE nim =  '$nim'
+										AND kd_modul =  '$kd_modul'
+										LIMIT 0 , 30"; 
+									$result = $mysqli->query($queryx)
+									or die('<b>-- Query failed -- </b> ' . mysql_error());
+									while ($datax = $result->fetch_array()){
+								
+									if(!empty($datax['nim'])){ 
+									?>
+										<td> <?php echo $data['nim']?></td>
+										<td> <?php echo $data['nama_mhs']?> </td>
+									<?php	
+									} else {
+									?>
+									<td> <?php echo $datax['file_name']?></td>
+									<td> <?php echo $datax['date']?> </td>
+									<?php
+										}
+									?>
+								  <tr/>
+								  <?php
+								}
+								?>
+								</tbody>
+							  </table>
+							  
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  <div class="accordion-group">
+						<div class="accordion-heading">
+						  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTree">
+							<div class="widget-header"> <i class="icon-user"></i>
+							<!-- Menampilkan Jumlah data Dosen  -->	
+							<?php
+								$sql="select * from tb_user where status='nonaktif'";
+								if ($result=mysqli_query($mysqli,$sql))
+								  {
+								  // Return the number of rows in result set
+								  $rowcount2=mysqli_num_rows($result);
+								  // Free result set
+								  mysqli_free_result($result);
+							  }
+							?>
+							  <h3>Konfirmasi Tukar Jadwal Praktikum Asisten&nbsp;<span class="badge badge-success pull-right" style="line-height:18px;" title="Belum dikonfirmasi"> <?php printf("%d",$rowcount2);?> </span></h3>
+							</div>
+						  </a>
+						</div>
+						<div id="collapseTree" class="accordion-body collapse">
+						  <div class="accordion-inner">
+							<div class="widget widget-table action-table">
+								<!-- /widget-header -->
+								<div class="widget-content">
+								  <table class="table table-striped table-bordered">
+									<thead>
+									  <tr>
+										<th> NIP </th>
+										<th> Nama </th>
+										<th> Tanggal Daftar </th>
+										<th> Status </th>
+										<th class="td-actions"> </th>
+									  </tr>
+									</thead>
+									<tbody>
+									<!-- Menampilkan data Dosen yang belum dikonfirmasi -->
+									<?php 
+										$query =  "select * from tb_user where status='nonaktif'";
+										//var_dump($query);
+										$result = $mysqli->query($query)
+										or die('<b>-- Query failed -- </b> ' . mysql_error());
+										while ($data = $result->fetch_array()){
+										?>
+									  <tr>
+										<td> <?php echo $data['id_pengenal']; ?> </td>
+										<td> <?php echo $data['nama_user']; ?> </td>
+										<td> <?php echo $data['tgl_daftar']; ?> </td>
+										<td> <?php echo $data['status']; ?></td>
+										<td class="td-actions">
+										<a href="konfirmasi.php?action=konfdsn&nip=<?php echo $data['nip'] ?>&hp=<?php echo $data['hp'] ?>&nama=<?php echo $data['nama'] ?>&email=<?php echo $data['email'] ?>"onclick="return confirm('Apakah Anda yakin menkonfirmasi Dosen : <?php echo $data['nama'];?> ?')" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok" title="Konfirmasi"> </i></a><a href="konfirmasi.php?action=deldsn&nim=<?php echo $data['nip'] ?>" onclick="return confirm('Apakah Anda yakin menghapus data Mahasiswa : <?php echo $data['nama'];?> ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove" title="Hapus"> </i></a></td>
+									  </tr>
+									  <?php 
+										$no++;
+									} 
+										?>
+									</tbody>
+								  </table>
+								</div> 
+							  </div>
+						  </div>
+						</div>
+					  </div>
+					  
+					  <div class="accordion-group">
+						<div class="accordion-heading">
+						  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#collapsefive">
+							<div class="widget-header"> <i class="icon-user"></i>
+							<!-- Menampilkan Jumlah data staf  -->	
+							<?php
+								$sql="select * from tb_user where status='nonaktif'";
+								if ($result=mysqli_query($mysqli,$sql))
+								  {
+								  // Return the number of rows in result set
+								  $rowcount4=mysqli_num_rows($result);
+								  // Free result set
+								  mysqli_free_result($result);
+							  }
+							?>
+							  <h3>Konfirmasi User&nbsp;<span class="badge badge-success pull-right" style="line-height:18px;" title="Belum dikonfirmasi"> <?php printf("%d",$rowcount4);?> </span></h3>
+							</div>
+						  </a>
+						</div>
+						<div id="collapsefive" class="accordion-body collapse">
+						  <div class="accordion-inner">
+							<div class="widget widget-table action-table">
+								<!-- /widget-header -->
+								<div class="widget-content">
+								  <div class="widget widget-table action-table">
+									<!-- /widget-header -->
+									<div class="widget-content">
+									  <table class="table table-striped table-bordered">
+										<thead>
+										  <tr>
+											<th> NIM/NIP </th>
+											<th> Nama </th>
+											<th> Level </th>
+											<th> Tanggal Daftar </th>
+											<th> Status </th>
+											<th class="td-actions"> </th>
+										  </tr>
+										</thead>
+										<tbody>
+										<!-- Menampilkan data staf yang belum dikonfirmasi -->
+										<?php 
+											$query =  "select * from tb_user where status='nonaktif'";
+											//var_dump($query);
+											$result = $mysqli->query($query)
+											or die('<b>-- Query failed -- </b> ' . mysql_error());
+											while ($data = $result->fetch_array()){
+											?>
+										  <tr>
+											<td> <?php echo $data['id_pengenal']; ?> </td>
+											<td> <?php echo $data['nama_user']; ?> </td>
+											<td> <?php echo $data['level']; ?> </td>
+											<td> <?php echo $data['tgl_daftar']; ?> </td>
+											<td> <?php echo $data['status']; ?></td>
+											<td class="td-actions"><a href="konfirmasi.php?action=konfuser&id_pengenal=<?php echo $data['id_pengenal'] ?>&hp=<?php echo $data['hp'] ?>&level=<?php echo $data['level'] ?>&nama=<?php echo $data['nama'] ?>&email=<?php echo $data['email'] ?>"onclick="return confirm('Apakah Anda yakin mengkonfirmasi User : <?php echo $data['nama'];?> ?')" class="btn btn-small btn-success" title="Konfirmasi"><i class="btn-icon-only icon-ok" > </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove" title="Hapus"> </i></a></td>
+										  </tr>
+										  <?php 
+											$no++;
+										} 
+											?>
+										</tbody>
+									  </table>
+								  </div>
+								</div>
+								</div>
+								<!-- /widget-content --> 
+							  </div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				</div> <!-- /controls -->	
+			</div> <!-- /control-group -->
+            
+          <!-- /widget -->
+          
+          <!-- /widget -->
+        </div>
+        <!-- /span6 --> 
+      </div>
+      <!-- /row --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /main-inner --> 
+<?php 
+include'template/footer.php';
+?>

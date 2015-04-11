@@ -1,0 +1,98 @@
+    A:link {text-decoration: none; color: blue;}
+    A:visited {text-decoration: none; color: blue;}
+    A:active {text-decoration: none}
+
+#teknisi_area {
+	width: 100%;
+	background: #00FFFF;
+	background: -moz-linear-gradient(top, #00FFFF 1%, #CCFFFF 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #00FFFF),
+		color-stop(100%, #CCFFFF) );
+	background: -webkit-linear-gradient(top, #00FFFF 1%, #CCFFFF 100%);
+	background: -o-linear-gradient(top, #00FFFF 1%, #CCFFFF 100%);
+	background: -ms-linear-gradient(top, #00FFFF 1%, #CCFFFF 100%);
+	background: linear-gradient(top, #00FFFF 1%, #CCFFFF 100%);
+}
+
+#welcome_area {
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+#menu_area {
+	margin: 0 auto;
+	width: 600px;
+	box-shadow: 7px 7px 4px #888888;
+}
+
+h2 {
+	color: white;
+	font-size: 25px;
+}
+
+h2:hover { /* CSS3 Transform Effect */
+	-webkit-transform: scale(1.1, 1.1); /* Safari & Chrome */
+	-moz-transform: scale(1.1, 1.1); /* Firefox */
+	-o-transform: scale(1.1, 1.1); /* Opera */
+}
+
+h2 { /* CSS3 Transition Effect */
+	-webkit-transition: all 0.12s ease-out; /* Safari & Chrome */
+	-moz-transition: all 0.12s ease-out; /* Firefox */
+	-o-transition: all 0.12s ease-out; /* Opera */
+}
+
+#persegi {
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+#ball_2 {
+	background-color: rgba(0, 0, 0, 0);
+	border: 5px solid rgba(0, 183, 229, 0.9);
+	opacity: .9;
+	border-top: 5px solid rgba(0, 0, 0, 0);
+	border-left: 5px solid rgba(0, 0, 0, 0);
+	border-radius: 90px;
+	box-shadow: 0 0 35px #2187e7;
+	width: 50px;
+	height: 50px;
+	-moz-animation: spinx 1.5s infinite linear;
+	-webkit-animation: spin .9s infinite linear;
+	position: relative;
+	z-index: 2;
+}
+
+
+#ball_3:hover {
+	border: 5px solid rgba(255, 51, 51, 0.9);
+	border-top: 5px solid rgba(0, 0, 0, 0);
+	border-left: 5px solid rgba(0, 0, 0, 0);
+	box-shadow: 0 0 35px #FF3366;
+}
+
+@
+-webkit-keyframes spinx { 0% {
+	-webkit-transform: rotate(0deg);
+}
+
+100%
+{
+-webkit-transform
+:rotate(360deg)
+;
+ 
+}
+}
+#inti_2 {
+	position: relative;
+	top: 36.5px;
+	left: 27px;
+	z-index: 5;
+	color: #9900CC;
+	font-size: 12.85px;
+	font-weight: bold;
+	text-decoration: underline;
+}

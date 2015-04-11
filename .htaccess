@@ -1,0 +1,41 @@
+
+RewriteEngine on
+#Merubah file data Mahasiswa
+RewriteRule login/labms$ login/masuk.php
+RewriteRule register/labms$ login/daftar.html
+RewriteRule cek_masuk/labms$ cek_login.html
+RewriteRule verifikasi$ login/verifikasi.html
+RewriteRule lupa_password/labms$ login/reset_pass.html
+RewriteRule reset_password/labms$ login/cek_reset_pass.html
+RewriteRule cek_mahasiswa/labms$ mahasiswa/simpan_mhs.html
+RewriteRule mahasiswa$ admin/mahasiswa.html
+RewriteRule salah$ login/salah.html
+RewriteRule help$ login/bantuan.html
+
+#Merubah ektensi .php menjadi .html
+RewriteRule ^(.*)\.html$ $1.php [nc]
+Options All -Indexes
+
+#Melarang mengakses folder
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+#Melarang mengakses file koneksi.php
+<Files koneksi.php>
+order allow,deny
+deny from all
+</Files>
+
+#401 - Authorization Required
+#400 - Bad request
+#403 - Forbidden
+#500 - Internal Server Error
+#404 - Wrong page
+
+ErrorDocument 400 http://localhost/ta-lms/error.html 
+ErrorDocument 401 http://localhost/ta-lms/error.html 
+ErrorDocument 403 http://localhost/ta-lms/error.html 
+ErrorDocument 404 http://localhost/ta-lms/error.html
+ErrorDocument 500 http://localhost/ta-lms/error.html

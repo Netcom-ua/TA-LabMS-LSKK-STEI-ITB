@@ -1,0 +1,55 @@
+ul#UTnavdocbwh{
+background:url(../gambar/menu/alas9a.png) bottom no-repeat;
+list-style:none;
+margin-left:215px;
+opacity:.6;
+position:fixed;
+bottom:3%;
+width:190px;
+z-index:10;
+-moz-transition:all .2s ease-out;
+-webkit-transition:all .2s ease-out;
+-o-transition:all .2s ease-out}
+
+ul#UTnavdocbwh:hover{opacity:.9}
+
+ul#UTnavdocbwh li{
+width:77px;
+display:inline;
+float:left;
+border:0;
+}
+
+ul#UTnavdocbwh li a{ 
+background-position:center;
+background-repeat:no-repeat;
+background-size:75px 55px;
+display:block;
+float:left;
+margin-top:-2px;
+width:85px;
+height:15px;
+padding-top:61px;
+text-decoration:none;
+text-align:center;
+-moz-transition:all .2s;
+-webkit-transition:all .2s;
+-o-transition:all .2s;
+opacity:.7}
+
+
+ul#UTnavdocbwh li a:hover{
+background-size:95px 75px;
+opacity:1}
+
+ul#UTnavdocbwh .back a{
+background-image:url(../gambar/menu/back.png)}
+
+ul#UTnavdocbwh .edit a{
+background-image:url(../gambar/menu/edit2.png)}
+
+
+ul#UTnavdocbwh .tambah a{
+background-image:url(../gambar/menu/tambah.png)}
+
+

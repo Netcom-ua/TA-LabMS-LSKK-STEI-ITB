@@ -1,0 +1,311 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	line-height: 1.3em;
+	background-color: #CCFFFF;
+}
+
+img {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+
+#wrapperku {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+#header {
+	width: 100%;
+	height: 145px;
+	margin-top: 15px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	-moz-border-radius-topleft: 30px;
+	-moz-border-radius-topright: 30px;
+	background-image: url("../gambar/header_ku_2.jpg");
+}
+
+#header2 {
+	width: 100%;
+	height: 145px;
+	margin-top: 15px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	-moz-border-radius-topleft: 30px;
+	-moz-border-radius-topright: 30px;
+}
+
+
+#logoku {
+	float: left;
+	margin-left: 95px;
+	margin-top: 12px;
+	width: 83px;
+	height: 120px;
+	background: url("../gambar/logo_ku2_2.png") no-repeat;
+}
+
+#titleku {
+	float: left;
+	margin-top: 5px;
+	margin-left: 25px;
+	margin-right: 25px;
+	width: 746px;
+	height: 140px;
+	background: url("../gambar/title_ku.png") no-repeat;
+}
+
+#logoku2 {
+	float: right;
+	margin-right: 95px;
+	margin-top: 13px;
+	width: 125px;
+	height: 115px;
+	background: url("../gambar/logo_ku4_4.png") no-repeat;
+}
+
+#main {
+	float: left;
+	width: 100%;
+	margin-top: 8px;
+	margin-bottom: 7px;
+}
+
+#main_kiri {
+	float: left;
+	width: 240px;
+	margin-right: 8px;
+	border: 1px solid #0099FF;
+	background-color: #CCFFFF;
+}
+
+#main_kiri_atas {
+	width: 223px;
+	margin-left: 7.3px;
+	margin-top: 8px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+#main_kiri_bawah {
+	width: 224px;
+	margin: 0 auto;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+#bagian_atas {
+	width: 100%;
+	height: 35px;
+	margin-bottom: 3px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-topright: 15px;
+	border: 1px solid #00BFFF;
+	background-color: #3BB9FF;
+}
+
+#bagian_bawah {
+	width: 100%;
+	-moz-border-radius-bottomleft: 15px;
+	-moz-border-radius-bottomright: 15px;
+	background-color: #CCFFFF;
+}
+
+#bagian_bawah_newsfeed {
+	width: 100%;
+	height: 480px;
+	margin-bottom: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	-moz-border-radius-bottomright: 15px;
+	border: 1px solid #00BFFF;
+	background-color: #99FFFF;
+}
+
+#bagian_bawah_login {
+	width: 100%;
+	height: 200px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	-moz-border-radius-bottomright: 15px;
+	border: 1px solid #00BFFF;
+	background-color: #99FFFF;
+}
+
+#bagian_bawah_calender {
+	width: 100%;
+	height: 220px;
+	padding-top: 10px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	-moz-border-radius-bottomright: 15px;
+	border: 1px solid #00BFFF;
+	background-color: #99FFFF;
+}
+
+#title {
+	text-align: center;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding-top: 8px;
+}
+
+#main_tengah {
+	float: left;
+	width: 697px;
+	margin-right: 8px;
+	border: 1px solid #0099FF;
+}
+
+#main_kanan {
+	margin-left: 957px;
+	width: 240px;
+	border: 1px solid #0099FF;
+	background-color: #CCFFFF;
+}
+
+#main_kanan_atas {
+	width: 223px;
+	margin-left: 7.3px;
+	margin-top: 8px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+#main_kanan_bawah {
+	width: 223px;
+	margin-left: 7.3px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+#area {
+	width: 100%;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+#area2 {
+	margin: 0 auto;
+	width: 672px;
+	background-color: #ffffff;
+	border-radius: 15px;
+	padding-bottom: 5px;
+}
+
+#area2new {
+	margin: 0 auto;
+	width: 672px;
+	background-color: #ffffff;
+	border-radius: 15px;
+	padding-bottom: 28px;
+}
+
+#title_area {
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 0px;
+}
+
+#title_area2 {
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#area3 {
+	width: 675px;
+	text-align: left;
+	margin-bottom: 8.2px;
+}
+
+#area3 h3 {
+	text-align: center;
+	font-size: 16.5px;
+	font-weight: inherit;
+	letter-spacing: 1px;
+}
+
+#area4 {
+	width: 675px;
+	text-align: left;
+	margin-bottom: 36px;
+}
+
+#area4 h3 {
+	text-align: center;
+	font-size: 16.5px;
+	font-weight: inherit;
+	letter-spacing: 1px;
+}
+
+#area_course {
+	width: 100%;
+}
+
+#area_course2 {
+	margin: 0 auto;
+	width: 100%px;
+	background-color: #ffffff;
+}
+
+#area_course3 {
+	margin: 0 auto;
+	border-radius: 10px;
+	width: 675px;
+	background-color: #ffffff;
+}
+
+#footer {
+	float: left;
+	width: 100%;
+	height: 75px;
+	margin-bottom: 15px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	-moz-border-radius-bottomright: 20px;
+	background-image: url("../gambar/footer_ku.jpg");
+}
+
+#footerfont {
+	margin-top: 26px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+	color: #ffffff;
+}
+
+/* News Feed */
+#news_area {
+	width: 100%;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#news_area2 {
+	width: 217px;
+	height: 470px;
+	margin-left: 3.2px;
+	overflow: auto;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px
+}
